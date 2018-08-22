@@ -13,17 +13,19 @@ mySprite.hideturtle() # hide turtle until the the duck image replaces the placeh
 mySprite.penup() # prevent sprite from drawing on screen as it moves
 mySprite.left(90) # rotate sprite for proper placement on screen
 mySprite.shape("Defender.gif") # Set Image for Sprite
-mySprite.setposition(0,-200)
+mySprite.setposition(0,-225)
 mySprite.showturtle()
 
 # Create Player Controls
 def left():
-    global mySprite
-    mySprite.setposition(mySprite.xcor() - 10, mySprite.ycor())
+    if mySprite.xcor() >= -225:
+        global mySprite
+        mySprite.setposition(mySprite.xcor() - 10, mySprite.ycor())
 
 def right():
-    global mySprite
-    mySprite.setposition(mySprite.xcor() + 10, mySprite.ycor())
+    if mySprite.xcor() <= 225:
+        global mySprite
+        mySprite.setposition(mySprite.xcor() + 10, mySprite.ycor())
 
 def fire():
     print("FIRE! (space bar pressed)")
