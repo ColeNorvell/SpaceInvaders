@@ -38,3 +38,21 @@ screen.listen()
 
 # Main Game Loop (Keeps Game Window From Closing)
 Tkinter.mainloop()
+
+#Create enemy Sprites
+
+#Create Laser
+
+#Make it so Friendly Laser comes out of pilot when spacebar is pressed
+
+#Make it so Friendly Laser kills Enemy Sprites
+
+#Make it so killing all Enemy Sprites causes a refresh of enemies
+
+#Attach point system to death of Enemy Sprites 
+
+#Make it so Enemy can create Lasers
+
+#Make it so Enemy Lasers make the pilot lose
+
+#Make it so losing makes "Game Over Appear"
