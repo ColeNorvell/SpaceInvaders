@@ -40,13 +40,13 @@ screen.listen()
 Tkinter.mainloop()
 
 #Create enemy Sprites
-screen.addshape("attacker.gif")
+screen.addshape("invader.gif")
 mySprite = turtle.Turtle()
 mySprite.hideturtle()
 mySprite.penup() 
 mySprite.left(90)
-mySprite.shape("attacker.gif") 
-mySprite.setposition(0,-225)
+mySprite.shape("invader.gif") 
+mySprite.setposition(0,200)
 mySprite.showturtle()
 #Create Laser
 
