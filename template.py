@@ -40,7 +40,14 @@ screen.listen()
 Tkinter.mainloop()
 
 #Create enemy Sprites
-
+screen.addshape("attacker.gif")
+mySprite = turtle.Turtle()
+mySprite.hideturtle()
+mySprite.penup() 
+mySprite.left(90)
+mySprite.shape("attacker.gif") 
+mySprite.setposition(0,-225)
+mySprite.showturtle()
 #Create Laser
 
 #Make it so Friendly Laser comes out of pilot when spacebar is pressed
