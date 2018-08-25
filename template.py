@@ -29,12 +29,15 @@ def right():
 
 def fire():
     print("FIRE! (space bar pressed)")
+    
+#add fire here?????????????
 
 # Set Event Listeners for Player Controls
 screen.onkey(left, "Left")
 screen.onkey(right, "Right")
 screen.onkey(fire, "space")
 screen.listen()
+
 
 # Main Game Loop (Keeps Game Window From Closing)
 Tkinter.mainloop()
@@ -49,7 +52,8 @@ mySprite.shape("invader.gif")
 mySprite.setposition(0,200)
 mySprite.showturtle()
 #Create Laser
-
+if screen.onkey == ("space")
+  #edit this, its wrong  
 #Make it so Friendly Laser comes out of pilot when spacebar is pressed
 
 #Make it so Friendly Laser kills Enemy Sprites
