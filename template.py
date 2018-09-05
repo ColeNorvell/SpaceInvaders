@@ -6,26 +6,34 @@ import turtle
 screen = turtle.Screen()
 screen.screensize(500, 500, "black")
 
+class Defender(turtle.Turtle):
+  def __init__(self):
+    turtle.Turtle.__init__(self)
+
+class Invader(turtle.Turtle):
+  def __init__(self):
+    turtle.Turtle.__init__(self)
+
 # Create Sprite
 screen.addshape("Defender.gif")
-mySprite = turtle.Turtle()
-mySprite.hideturtle() # hide turtle until the the duck image replaces the placeholder shape
-mySprite.penup() # prevent sprite from drawing on screen as it moves
-mySprite.left(90) # rotate sprite for proper placement on screen
-mySprite.shape("Defender.gif") # Set Image for Sprite
-mySprite.setposition(0,-225)
-mySprite.showturtle()
+defender = Defender()
+defender.hideturtle() # hide turtle until the the defender replaces the placeholder shape
+defender.penup() # prevent sprite from drawing on screen as it moves
+defender.left(90) # rotate sprite for proper placement on screen
+defender.shape("Defender.gif") # Set Image for Sprite
+defender.setposition(0,-225)
+defender.showturtle()
 
 # Create Player Controls
 def left():
-    if mySprite.xcor() >= -225:
+    if defender.xcor() >= -225:
         global mySprite
-        mySprite.setposition(mySprite.xcor() - 10, mySprite.ycor())
+        defender.setposition(defender.xcor() - 10, defender.ycor())
 
 def right():
-    if mySprite.xcor() <= 225:
+    if defender.xcor() <= 225:
         global mySprite
-        mySprite.setposition(mySprite.xcor() + 10, mySprite.ycor())
+        defender.setposition(defender.xcor() + 10, defender.ycor())
 
 def fire():
     print("FIRE! (space bar pressed)")
@@ -38,21 +46,20 @@ screen.onkey(right, "Right")
 screen.onkey(fire, "space")
 screen.listen()
 
+#Create enemy Sprites
+screen.addshape("invader.gif")
+invader = Invader()
+invader.hideturtle()
+invader.penup()
+invader.left(90)
+invader.shape("invader.gif")
+invader.setposition(0,0)
+invader.showturtle()
 
 # Main Game Loop (Keeps Game Window From Closing)
 Tkinter.mainloop()
 
-#Create enemy Sprites
-screen.addshape("invader.gif")
-mySprite = turtle.Turtle()
-mySprite.hideturtle()
-mySprite.penup()
-mySprite.left(90)
-mySprite.shape("invader.gif")
-mySprite.setposition(0,200)
-mySprite.showturtle()
 #Create Laser
-
 
 #Make it so Friendly Laser comes out of pilot when spacebar is pressed
 
