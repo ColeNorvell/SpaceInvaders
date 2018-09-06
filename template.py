@@ -1,3 +1,5 @@
+# SpaceInvaders.py by Cole Norvell & Chris Pedersen
+
 # Import the Tkinter & Turtle Graphics Modules
 import Tkinter
 import turtle
@@ -7,12 +9,12 @@ screen = turtle.Screen()
 screen.screensize(500, 500, "black")
 
 class Defender(turtle.Turtle):
-  def __init__(self):
-    turtle.Turtle.__init__(self)
+    def __init__(self):
+        turtle.Turtle.__init__(self)
 
 class Invader(turtle.Turtle):
-  def __init__(self):
-    turtle.Turtle.__init__(self)
+    def __init__(self):
+        turtle.Turtle.__init__(self)
 
 # Create Sprite
 screen.addshape("Defender.gif")
@@ -48,6 +50,7 @@ screen.listen()
 
 #Create enemy Sprites
 screen.addshape("invader.gif")
+'''
 invader = Invader()
 invader.hideturtle()
 invader.penup()
@@ -55,9 +58,21 @@ invader.left(90)
 invader.shape("invader.gif")
 invader.setposition(0,0)
 invader.showturtle()
+'''
 
-# Main Game Loop (Keeps Game Window From Closing)
-Tkinter.mainloop()
+firstRowInvader = []
+for i in range(6):
+    firstRowInvader.append(Invader())
+    if i == 0:
+        x = 300
+    else:
+        x = x - 75
+    firstRowInvader[i].hideturtle()
+    firstRowInvader[i].penup()
+    firstRowInvader[i].left(90)
+    firstRowInvader[i].shape("invader.gif")
+    firstRowInvader[i].setposition(x, 0)
+    firstRowInvader[i].showturtle()
 
 #Create Laser
 
@@ -74,3 +89,6 @@ Tkinter.mainloop()
 #Make it so Enemy Lasers make the pilot lose
 
 #Make it so losing makes "Game Over Appear"
+
+# Main Game Loop (Keeps Game Window From Closing)
+Tkinter.mainloop()
