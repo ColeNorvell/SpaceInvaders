@@ -12,6 +12,10 @@ class Defender(turtle.Turtle):
     def __init__(self):
         turtle.Turtle.__init__(self)
 
+class Shield(turtle.Turtle):
+  def __init__(self):
+    turtle.Turtle.__init__(self)
+
 class Invader(turtle.Turtle):
     def __init__(self):
         turtle.Turtle.__init__(self)
@@ -50,21 +54,12 @@ screen.listen()
 
 #Create enemy Sprites
 screen.addshape("invader.gif")
-'''
-invader = Invader()
-invader.hideturtle()
-invader.penup()
-invader.left(90)
-invader.shape("invader.gif")
-invader.setposition(0,0)
-invader.showturtle()
-'''
 
 firstRowInvader = []
-for i in range(6):
+for i in range(7):
     firstRowInvader.append(Invader())
     if i == 0:
-        x = 300
+        x = 225
     else:
         x = x - 75
     firstRowInvader[i].hideturtle()
@@ -73,6 +68,47 @@ for i in range(6):
     firstRowInvader[i].shape("invader.gif")
     firstRowInvader[i].setposition(x, 0)
     firstRowInvader[i].showturtle()
+
+secondRowInvader = []
+for i in range(7):
+    secondRowInvader.append(Invader())
+    if i == 0:
+        x = 225
+    else:
+        x = x - 75
+    secondRowInvader[i].hideturtle()
+    secondRowInvader[i].penup()
+    secondRowInvader[i].left(90)
+    secondRowInvader[i].shape("invader.gif")
+    secondRowInvader[i].setposition(x, 75)
+    secondRowInvader[i].showturtle()
+
+thirdRowInvader = []
+for i in range(7):
+    thirdRowInvader.append(Invader())
+    if i == 0:
+        x = 225
+    else:
+        x = x - 75
+    thirdRowInvader[i].hideturtle()
+    thirdRowInvader[i].penup()
+    thirdRowInvader[i].left(90)
+    thirdRowInvader[i].shape("invader.gif")
+    thirdRowInvader[i].setposition(x, 150)
+    thirdRowInvader[i].showturtle()
+
+screen.addshape("Shield.gif")
+shield = []
+shieldx = -150
+for i in range(3):
+  shield.append(Shield())
+  shield[i].hideturtle()
+  shield[i].penup()
+  shield[i].left(90)
+  shield[i].shape("Shield.gif")
+  shield[i].setposition(shieldx, -125)
+  shield[i].showturtle()
+  shieldx = shieldx + 150
 
 #Create Laser
 
