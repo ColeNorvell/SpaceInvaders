@@ -8,20 +8,36 @@ import turtle
 screen = turtle.Screen()
 screen.screensize(500, 500, "black")
 
+# Load Images
+screen.addshape("Defender.gif")
+screen.addshape("Lazer.gif")
+
+
 class Defender(turtle.Turtle):
     def __init__(self):
         turtle.Turtle.__init__(self)
 
 class Shield(turtle.Turtle):
-  def __init__(self):
-    turtle.Turtle.__init__(self)
+    def __init__(self):
+        turtle.Turtle.__init__(self)
 
 class Invader(turtle.Turtle):
     def __init__(self):
         turtle.Turtle.__init__(self)
 
+class Lazer(turtle.Turtle):
+    def __init__(self):
+        turtle.Turtle.__init__(self)
+        '''
+        this.hideturtle() # hide turtle until the the defender replaces the placeholder shape
+        this.penup() # prevent sprite from drawing on screen as it moves
+        this.left(90) # rotate sprite for proper placement on screen
+        this.shape("Lazer.gif") # Set Image for Sprite
+        this.setposition(0,0)
+        this.showturtle()
+        '''
+
 # Create Sprite
-screen.addshape("Defender.gif")
 defender = Defender()
 defender.hideturtle() # hide turtle until the the defender replaces the placeholder shape
 defender.penup() # prevent sprite from drawing on screen as it moves
@@ -41,10 +57,19 @@ def right():
         global mySprite
         defender.setposition(defender.xcor() + 10, defender.ycor())
 
+lazer = []
+lazerIndex = -1
 def fire():
-    print("FIRE! (space bar pressed)")
+    global lazerIndex
+    lazerIndex = lazerIndex + 1
+    lazer.append(Lazer())
+    lazer[lazerIndex].hideturtle() # hide turtle until the the defender replaces the placeholder shape
+    lazer[lazerIndex].penup() # prevent sprite from drawing on screen as it moves
+    lazer[lazerIndex].left(90) # rotate sprite for proper placement on screen
+    lazer[lazerIndex].shape("Lazer.gif") # Set Image for Sprite
+    lazer[lazerIndex].setposition(0,0)
+    lazer[lazerIndex].showturtle()
 
-#add fire here?????????????
 
 # Set Event Listeners for Player Controls
 screen.onkey(left, "Left")
